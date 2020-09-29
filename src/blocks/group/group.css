@@ -1,0 +1,32 @@
+@import url(__title/group__title.css);
+@import url(__input/group__input.css);
+@import url(__text/group__text.css);
+@import url(group_btn/group_btn.css);
+@import url(__search/group__search.css);
+@import url(_indent/group_indent.css);
+
+.group {
+    display: flex;
+  position: relative;
+  justify-content: space-between;
+  flex-direction: column;
+  height: calc(100% - 56px);
+}
+
+@media screen and (min-width: 768px) {
+  .group {
+    height: calc(100% - 66px);
+    width: 58%;
+    margin: 0 auto;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .group {
+    height: calc(100% - 80px);
+    width: 608px;
+    margin: 0 auto;
+    align-items: center;
+  }
+}

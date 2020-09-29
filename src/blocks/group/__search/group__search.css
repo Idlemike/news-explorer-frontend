@@ -1,0 +1,5 @@
+.group__search {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}

@@ -1,0 +1,10 @@
+.header__block {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  margin: auto 0;
+}

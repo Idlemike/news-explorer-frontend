@@ -1,0 +1,30 @@
+.header__icon-item {
+    color: #FFFFFF;
+    opacity: 1;
+    transition: opacity .5s linear;
+  list-style: none;
+  text-decoration-line: none;
+   margin: 0;
+  padding: 0 0 2px 0;
+}
+
+.header__icon-item:last-of-type {
+  padding: 2px 0 0  0;
+}
+
+.header__icon-item_active  {
+    text-decoration: underline;
+}
+
+.header__icon-item:hover {
+    opacity: .5;
+}
+
+@media screen and (min-width: 768px) {
+    .header__lang-item  {
+        font-size: 1.5rem;
+        line-height: 1.4375rem;
+    }
+}
+
+

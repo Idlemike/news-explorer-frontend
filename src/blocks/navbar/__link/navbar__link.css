@@ -1,0 +1,27 @@
+.navbar__link {
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-size: 1.125rem;
+  line-height: 2.11;
+  font-weight: 500;
+  text-decoration-line: none;
+  color: #FFFFFF;
+  opacity: 1;
+  transition: opacity .5s linear;
+}
+
+.navbar__link_active  {
+  text-decoration: underline;
+}
+
+.navbar__link:hover {
+  opacity: .5;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar__link  {
+    font-size: 1.5rem;
+    line-height: 1.4375rem;
+    margin: auto 1rem auto auto;
+  }
+}
