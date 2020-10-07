@@ -1,0 +1,29 @@
+.about__avatar {
+  margin: 2rem 1.5rem 1.5rem 1.5rem;
+  min-width: 272px;
+  min-height: 272px;
+  width: calc(100vw - 48px);
+  height: calc(100vw - 48px);
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-image: url(../../../images/image-03.png);
+}
+
+@media screen and (min-width: 768px) {
+  .about__avatar {
+    width: 32vw;
+    height: 32vw;
+    margin: auto auto auto 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .about__avatar {
+/*    width: 32vw;
+    height: 32vw;*/
+    max-width: 464px;
+    max-height: 464px;
+    margin: 0 56px 0 0;
+  }
+}

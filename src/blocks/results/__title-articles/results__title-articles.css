@@ -1,0 +1,17 @@
+.results__title-articles {
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 24px;
+  color: rgba(26, 27, 34, 0.5);
+  margin: 0 auto 16px 0;
+  padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .results__title-articles {
+    margin: 0 auto 16px 40px;
+    padding-top: 24px;
+  }
+}

@@ -1,0 +1,31 @@
+.card__delete-icon {
+  background: url(../../../images/trash.svg) center no-repeat;
+  background-color: transparent;
+  border: none;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+  .card__delete-icon {
+    top: 8px;
+    right: 8px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .card__delete-icon {
+    top: 24px;
+    right: 24px;
+  }
+  .card:hover .card__tooltip {
+    display: block;
+  }
+}
+
+

@@ -1,0 +1,23 @@
+.card__description {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 244px;
+  align-items: left;
+  justify-content: unset;
+  box-sizing: border-box;
+  padding: 0 1rem 0;
+}
+
+@media screen and (min-width: 1440px) {
+  .card__description {
+    min-height: 270px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .card__description {
+    min-height: 304px;
+    padding: 4px 1rem 0;
+  }
+}

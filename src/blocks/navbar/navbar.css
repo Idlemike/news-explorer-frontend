@@ -7,6 +7,9 @@
 @import url(./__patch_arrow/navbar__patch_arrow.css);
 @import url(./__patch/navbar__patch.css);
 @import url(./__shadow/navbar__shadow.css);
+@import url(../header/header_theme_dark.css);
+@import url(../header/__link/header__link_theme_dark.css);
+
 
 .navbar {
   position: absolute;
@@ -22,7 +25,7 @@
   line-height: 56px;
   color: #FFFFFF;
   border-radius: 16px;
-  z-index: 1;
+  z-index: 10;
 }
 
 .navbar_active {

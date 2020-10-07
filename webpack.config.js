@@ -120,6 +120,15 @@ module.exports = {
       template: './index.html', // откуда брать образец для сравнения с текущим видом проекта
       filename: 'index.html', // имя выходного файла, то есть того, что окажется в папке dist после сборки
     }),
+    new HtmlWebpackPlugin({ // настроили плагин
+      inject: false, // стили НЕ нужно прописывать внутри тегов
+      // hash: true, // для страницы нужно считать хеш
+      minify: {
+        collapseWhitespace: isProd,
+      },
+      template: './articles.html', // откуда брать образец для сравнения с текущим видом проекта
+      filename: 'articles.html', // имя выходного файла, то есть того, что окажется в папке dist после сборки
+    }),
     new WebpackMd5Hash(),
   ],
 };

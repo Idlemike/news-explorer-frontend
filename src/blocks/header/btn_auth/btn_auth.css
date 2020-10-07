@@ -32,7 +32,39 @@
     text-align: center;
     text-justify: auto;
     color: #FFFFFF;
-        padding: 0 30px 0 30px;
-         background: transparent;
+    padding: 0 30px 0 30px;
+    background: transparent;
+    margin-left: 1rem;
   }
 }
+
+@media screen and (min-width: 1440px) {
+  .btn-auth {
+    height: 48px;
+  }
+}
+
+.btn-auth_reg {
+  width: auto;
+  max-width: 10em;
+}
+
+.btn_theme_white {
+  color: #1A1B22;
+  border: 1px solid #D1D2D6;
+  box-shadow: 0 5px 15px rgba(14, 26, 57, 0);
+}
+
+@media screen and (min-width: 1440px) {
+  .btn_theme_white {
+    height: 48px;
+    border: 1px solid #1A1B22;
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+.btn_union {
+  padding-left: 8px;
+}
+

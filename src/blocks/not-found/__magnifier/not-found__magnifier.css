@@ -1,0 +1,8 @@
+.not-found__magnifier {
+  margin: 86px auto 40px auto;
+/*  border: 1px solid #D1D2D6;*/
+  box-sizing: border-box;
+  padding: 0;
+  width: 74px;
+  height: 74px;
+}

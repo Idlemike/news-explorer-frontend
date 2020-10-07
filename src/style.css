@@ -4,6 +4,14 @@
 @import url(./blocks/navbar/navbar.css);
 @import url(blocks/group/group.css);
 @import url(./blocks/main/main.css);
+@import url(./blocks/about/about.css);
+@import url(./blocks/footer/footer.css);
+@import url(./blocks/results/results.css);
+@import url(blocks/preloader/preloader.css);
+@import url(blocks/page_saved/page_saved.css);
+@import url(./blocks/header/header_theme_white.css);
+@import url(./blocks/not-found/not-found.css);
+
 
 @font-face {
   font-family: Inter, Serif;

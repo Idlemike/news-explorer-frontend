@@ -1,0 +1,18 @@
+@import url(__magnifier/not-found__magnifier.css);
+@import url(__title/not-found__title.css);
+@import url(__text/not-found__text.css);
+
+.not-found {
+  position: relative;
+  display: none;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  min-height: 374px;
+  background: #F5F6F7;
+  width: 100%;
+}
+
+.not-found_active {
+  display: flex;
+}

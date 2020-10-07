@@ -1,0 +1,22 @@
+@import url(__circle/preloader__circle.css);
+@import url(__searching/preloader__searching.css);
+
+.preloader {
+  display: none;
+  position: relative;
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #333;
+  overflow: hidden;
+}
+
+.preloader_active {
+  display: block;
+}
+
+@media screen and (min-width: 768px){
+  .preloader {
+    min-height: 282px;
+  }
+}

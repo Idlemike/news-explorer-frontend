@@ -1,0 +1,10 @@
+.footer__out-links {
+  list-style-type: none;
+  list-style-position: outside;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__out-links {
+    margin: auto 0;
+  }
+}

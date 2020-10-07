@@ -1,0 +1,30 @@
+.header__link {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  right: 1rem;
+  top: 1rem;
+  color: #FFFFFF;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.header__link:focus .navbar {
+  display: block
+}
+
+/*.header__lang_item:focus {
+    text-decoration-line: underline;
+}*/
+
+@media screen and (min-width: 768px) {
+  .header__link {
+    display: none;
+  }
+}
+
+.header__link_theme_white {
+  color: #1A1B22;
+  top: 14px;
+}
