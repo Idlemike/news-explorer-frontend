@@ -25,12 +25,14 @@
 
 .group_btn:hover {
   background: #347EFF;
+  cursor: pointer;
 }
 
 .group_btn:focus {
   outline: none;
   box-shadow: 0 0 0 4px #cbd6ee;
   background-color: #2A65CC;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {

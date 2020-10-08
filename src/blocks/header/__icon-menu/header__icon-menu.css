@@ -11,29 +11,6 @@
   display: block
 }
 
-a.svg {
-  position: relative;
-  display: inline-block;
-}
-
-a.svg:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-.header__object {
-  display: flex;
-  flex-direction: column;
-}
-
-/*.header__lang_item:focus {
-    text-decoration-line: underline;
-}*/
-
 @media screen and (min-width: 768px) {
   .header__icon-menu {
     display: none;

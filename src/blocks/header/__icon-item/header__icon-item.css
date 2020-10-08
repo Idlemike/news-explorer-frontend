@@ -21,7 +21,7 @@
 }
 
 @media screen and (min-width: 768px) {
-    .header__lang-item  {
+    .header__icon-item  {
         font-size: 1.5rem;
         line-height: 1.4375rem;
     }

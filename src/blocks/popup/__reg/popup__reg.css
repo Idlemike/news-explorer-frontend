@@ -1,0 +1,26 @@
+.popup__reg {
+  font-family: Inter, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #2F71E5;
+  text-decoration: none;
+}
+
+.popup__reg_reg-done {
+  font-family: Inter, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  margin: 0 auto auto 36px;
+  color: #2F71E5;
+  opacity: 1;
+  transition: 500ms;
+}
+
+.popup__reg:hover {
+  opacity: .5;
+}

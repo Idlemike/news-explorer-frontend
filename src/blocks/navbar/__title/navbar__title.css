@@ -9,23 +9,13 @@
 }
 
 @media screen and (min-width: 768px) {
-   .navbar__title {
-     display: block;
-     padding: 0;
-     margin: 0;
-     font-weight: 500;
-     font-style: normal;
-     font-size: 1rem;
-     line-height: 1.5;
-   }
-}
-
-.horizontal-line {
-  width:50px;
-  text-align:right;
-  float:right;
-  background:linear-gradient(90deg, #2F73B6, #39B6E8);
-  border:none!important;
-  border-radius:5px;
-  height:10px;
+  .navbar__title {
+    display: block;
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
 }

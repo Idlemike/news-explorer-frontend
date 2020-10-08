@@ -20,8 +20,6 @@
 
 @media screen and (min-width: 1440px) {
   .about__avatar {
-/*    width: 32vw;
-    height: 32vw;*/
     max-width: 464px;
     max-height: 464px;
     margin: 0 56px 0 0;

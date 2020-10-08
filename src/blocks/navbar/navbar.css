@@ -10,7 +10,6 @@
 @import url(../header/header_theme_dark.css);
 @import url(../header/__link/header__link_theme_dark.css);
 
-
 .navbar {
   position: absolute;
   display: none;

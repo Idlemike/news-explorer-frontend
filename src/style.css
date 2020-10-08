@@ -11,6 +11,7 @@
 @import url(blocks/page_saved/page_saved.css);
 @import url(./blocks/header/header_theme_white.css);
 @import url(./blocks/not-found/not-found.css);
+@import url(./blocks/popup/popup.css);
 
 
 @font-face {

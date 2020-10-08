@@ -47,5 +47,6 @@
   .card_saved {
     width: 100%;
     margin: 0;
+    height: max-content;
   }
 }

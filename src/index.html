@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Title</title>
+  <link rel="shortcut icon" href="<%=require('./images/favicon.ico')%>" type="image/x-icon"/>
+  <title>NewsExplorer</title>
   <link rel="stylesheet" href="vendor/normalize.css" type="text/css">
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
 </head>
@@ -19,7 +20,7 @@
         <a class="header__title-link" href="#"><h4 class="header__title_main">Главная</h4></a>
         <button class="btn btn-auth">Регистрация</button>
       </div>
-      <a href="#" class="header__link"><img src="<%=require('./images/menu.svg')%>"></a>
+      <a href="#" class="header__link"><img src="<%=require('./images/menu.svg')%>" alt="Menu"></a>
     </header>
 
     <!--HEADER REGISTERED-->
@@ -30,7 +31,7 @@
         <a class="header__title-link" href="#"><h4 class="header__title_main header__title_main_reg">Сохранённые
           статьи</h4></a>
         <form>
-          <button class="btn btn-auth btn-auth_reg">Грета<img src="<%=require('./images/Union.svg')%>"></button>
+          <button class="btn btn-auth btn-auth_reg">Грета<img src="<%=require('./images/Union.svg')%>" alt="Union"></button>
         </form>
       </div>
     </header>
@@ -38,7 +39,7 @@
     <nav class="navbar">
       <header class="header header_indent header_theme_dark header_active">
         <h3 class="header__title">NewsExplorer</h3>
-        <a href="#" class="header__link header__link_theme_dark"><img src="<%=require('./images/back.svg')%>"></a>
+        <a href="#" class="header__link header__link_theme_dark"><img src="<%=require('./images/back.svg')%>" alt="Back"></a>
       </header>
       <div class="navbar__content">
         <div class="navbar__schedule">
@@ -61,6 +62,80 @@
         <button type="submit" class="btn group_btn">Искать</button>
       </div>
     </div>
+
+    <!--Popup ENTER template-->
+    <div class="popup popup_type_enter">
+      <div class="popup__content">
+        <img src="<%=require('./images/1440/back.svg')%>" alt="Back" class="popup__close popup__close_type_reg">
+        <h3 class="popup__title">Вход</h3>
+        <form class="popup__form" id="formEnter" name="formEnter" novalidate>
+          <div class="input">
+            <div class="input-container">
+              <p class="popup__subtitle popup__subtitle_email">Email</p>
+              <input type="email" name="email" id="emailEnter" minlength="2" maxlength="30"
+                     class="popup__input popup__input_type_email" placeholder="Введите почту"
+                     required autofocus>
+              <span id="emailEnter-error" class="error"></span>
+              <p class="popup__subtitle popup__subtitle_password">Пароль</p>
+              <input type="password" name="password" id="passwordEnter" minlength="2" maxlength="30"
+                     class="popup__input popup__input_type_password" placeholder="Введите пароль"
+                     required>
+              <span id="passwordEnter-error" class="error">ffffffffffffffffffffff</span>
+
+            </div>
+            <button type="submit" id="submitEnter" disabled
+                    class="button popup__button popup__button_type_enter">
+              Войти
+            </button>
+            <p class="popup__or">или <a href="#" class="popup__reg">Зарегистрироваться</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!--Popup REGISTRATION template-->
+    <div class="popup popup_type_reg">
+      <div class="popup__content">
+        <img src="<%=require('./images/1440/back.svg')%>" alt="Back" class="popup__close popup__close_type_reg">
+        <h3 class="popup__title">Регистрация</h3>
+        <form class="popup__form" id="formReg" name="formReg" novalidate>
+          <div class="input">
+            <div class="input-container">
+              <p class="popup__subtitle popup__subtitle_email">Email</p>
+              <input type="email" name="email" id="emailReg" minlength="2" maxlength="30"
+                     class="popup__input popup__input_type_email" placeholder="Введите почту"
+                     required>
+              <span id="emailReg-error" class="error"></span>
+              <p class="popup__subtitle popup__subtitle_password">Пароль</p>
+              <input type="password" name="passwordReg" id="passwordReg" minlength="6" maxlength="30"
+                     class="popup__input popup__input_type_password" placeholder="Введите пароль"
+                     required>
+              <span id="passwordReg-error" class="error"></span>
+              <p class="popup__subtitle popup__subtitle_name">Имя</p>
+              <input type="text" name="nameReg" id="nameReg" minlength="2" maxlength="30"
+                     class="popup__input popup__input_type_password" placeholder="Введите своё имя"
+                     required>
+              <span id="name-error" class="error error_name">Такой пользователь уже есть</span>
+            </div>
+            <button type="submit" id="submitReg" disabled
+                    class="button popup__button popup__button_type_enter popup__button_type_reg">
+              Зарегистрироваться
+            </button>
+            <p class="popup__or">или <a href="#" class="popup__reg">Войти</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!--Popup REGISTRATION-DONE template-->
+    <div class="popup popup_type_reg-done ">
+      <div class="popup__content popup__content_reg-done">
+        <img src="<%=require('./images/1440/back.svg')%>" alt="Back" class="popup__close popup__close_type_reg">
+        <h3 class="popup__title popup__title_reg-done">Пользователь успешно зарегестрирован!</h3>
+        <a href="#" class="popup__reg popup__reg_reg-done">Войти</a>
+      </div>
+    </div>
+
   </section>
 
   <!--SEARCH RESULTS-->
@@ -71,9 +146,9 @@
       <!--<template id="task-template" style="display: block">;-->
       <div class="card">
         <div class="card__image"
-             style="/*noinspection CssUnknownTarget*/background-image: url(<%=require('./images/image_08.png')%>)">
+             style="background-image: url(<%=require('./images/image_08.png')%>)">
           <button class="card__flag-icon card__flag-icon_active"></button>
-          <img src="<%=require('./images/tooltip.svg')%>" class="card__tooltip">
+          <img src="<%=require('./images/tooltip.svg')%>" alt="tooltip" class="card__tooltip">
         </div>
         <div class="card__description">
           <h4 class="card__date">2 августа, 2019</h4>
@@ -89,9 +164,9 @@
       <!--<template id="task-template" style="display: block">;-->
       <div class="card">
         <div class="card__image"
-             style="/*noinspection CssUnknownTarget*/background-image: url(<%=require('./images/image_07.png')%>)">
+             style="background-image: url(<%=require('./images/image_07.png')%>)">
           <button class="card__flag-icon card__flag-icon_active"></button>
-          <img src="<%=require('./images/tooltip.svg')%>" class="card__tooltip">
+          <img src="<%=require('./images/tooltip.svg')%>" alt="tooltip" class="card__tooltip">
         </div>
         <div class="card__description">
           <h4 class="card__date">2 августа, 2019</h4>
@@ -108,9 +183,9 @@
       <!--<template id="task-template" style="display: block">;-->
       <div class="card">
         <div class="card__image"
-             style="/*noinspection CssUnknownTarget*/background-image: url(<%=require('./images/image_06.png')%>)">
+             style="background-image: url(<%=require('./images/image_06.png')%>)">
           <button class="card__flag-icon card__flag-icon_active"></button>
-          <img src="<%=require('./images/tooltip.svg')%>" class="card__tooltip">
+          <img src="<%=require('./images/tooltip.svg')%>" alt="tooltip" class="card__tooltip">
         </div>
         <div class="card__description">
           <h4 class="card__date">2 августа, 2019</h4>
@@ -133,7 +208,7 @@
       ничего не найдено.</p>
   </section>
 
-  <section class="preloader">
+  <section class="preloader preloader_active">
     <div class="preloader__circle"></div>
     <p class="preloader__searching">Идет поиск новостей...</p>
   </section>
@@ -152,16 +227,18 @@
       </ul>
     </div>
   </div>
+
+
   <footer class="footer">
     <div class="footer__content">
       <ul class="footer__links">
-        <li class="footer__link-item"><a href="#" class="footer__link">Главная</a></li>
-        <li class="footer__link-item"><a href="#" class="footer__link">Яндекс.Практикум</a></li>
+        <li class="footer__link-item"><a href="index.html" class="footer__link">Главная</a></li>
+        <li class="footer__link-item"><a href="https://praktikum.yandex.ru/" class="footer__link">Яндекс.Практикум</a></li>
       </ul>
       <ul class="footer__out-links">
-        <li class="footer__out-item"><a href="#" class="footer__out-link"><img
+        <li class="footer__out-item"><a href="#" class="footer__out-link" target="_blank"><img
           src="<%=require('./images/GH.svg')%>" alt="иконка GitHub" class="footer__social-icon"/></a></li>
-        <li class="footer__out-item"><a href="#" class="footer__out-link"><img
+        <li class="footer__out-item"><a href="http://www.facebook.com" class="footer__out-link" target="_blank"><img
           src="<%=require('./images/facebook.svg')%>" alt="иконка facebook" class="footer__social-icon"/></a>
         </li>
       </ul>

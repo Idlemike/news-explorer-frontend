@@ -1,4 +1,5 @@
-.navbar__link {
+.header__title-link {
+  display: none;
   font-family: Roboto, serif;
   font-style: normal;
   font-size: 1.125rem;
@@ -8,27 +9,36 @@
   color: #FFFFFF;
   opacity: 1;
   transition: opacity .5s linear;
-  margin-left: 0;
+
 }
 
-.navbar__link_active {
-  text-decoration: underline;
+.header__title-link_theme_white {
+  color: #1A1B22;
 }
 
-.navbar__link:hover {
+.header__title-link:hover {
   opacity: .5;
 }
 
+.header__title-link:focus {
+  border-bottom: 3px solid #FFFFFF;
+}
+
+.header__title-link_theme_white:focus {
+  border-bottom: 3px solid #1A1B22;
+}
+
 @media screen and (min-width: 768px) {
-  .navbar__link {
+  .header__title-link  {
+    display: block;
     font-size: 16px;
     line-height: 1.5;
-    margin: auto 1rem auto auto;
+    margin: auto 0;
   }
 }
 
 @media screen and (min-width: 1440px) {
-  .navbar__link {
+  .header__title-link  {
     font-size: 18px;
     line-height: 24px;
     margin: auto 1rem auto auto;

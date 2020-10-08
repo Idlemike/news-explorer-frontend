@@ -25,9 +25,6 @@
   }
 }
 
-/*.card:hover .place-card__delete-icon {
-  display: block;
-}*/
 .card__tooltip_active {
   display: block;
 }
