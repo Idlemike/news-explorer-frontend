@@ -9,6 +9,7 @@
   <title>NewsExplorer</title>
   <link rel="stylesheet" href="vendor/normalize.css" type="text/css">
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 </head>
 <body class="body_bg-gray">
 <div class="page page_active">
@@ -58,7 +59,7 @@
         <p class="group__text">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
       </div>
       <div class="group__search">
-        <input class="group__input" type="search" placeholder="Политика">
+        <input class="group__input" type="search" placeholder="Политика" required>
         <button type="submit" class="btn group_btn">Искать</button>
       </div>
     </div>
@@ -208,7 +209,7 @@
       ничего не найдено.</p>
   </section>
 
-  <section class="preloader preloader_active">
+  <section class="preloader">
     <div class="preloader__circle"></div>
     <p class="preloader__searching">Идет поиск новостей...</p>
   </section>

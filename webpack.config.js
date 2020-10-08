@@ -10,6 +10,7 @@ const WebpackMd5Hash = require('webpack-md5-hash');
 const webpack = require('webpack');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const cssnano = require('cssnano');
+
 // подключаем плагин
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;

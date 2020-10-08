@@ -27,6 +27,7 @@
   .card {
     width: calc((100% - 16px) / 3);
     margin: 0 8px 0 0;
+    height: 430px;
   }
   .card:last-of-type {
     margin-right: 0;
@@ -37,6 +38,7 @@
   .card {
     width: calc((100% - 32px) / 3);
     margin: 0 16px 0 0;
+    height: 576px;
   }
   .card:last-of-type {
     margin-right: 0;
@@ -47,6 +49,14 @@
   .card_saved {
     width: 100%;
     margin: 0;
-    height: max-content;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .card_saved {
+    width: 100%;
+    margin: 0;
+    height: 576px;
   }
 }
