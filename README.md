@@ -1,5 +1,5 @@
 # news-explorer-frontend
-# This site was built using GitHub Pages <https://idlemike.github.io/news-explorer/>
+# This site was built using GitHub Pages <https://idlemike.github.io/news-explorer-frontend/>
 ***
 ## **Version 0.0.1**
 ***
@@ -34,4 +34,4 @@ Node_modules
 None
 ***
 ## **GH pages link**
-<https://idlemike.github.io/news-explorer/>
+<https://idlemike.github.io/news-explorer-frontend/>
