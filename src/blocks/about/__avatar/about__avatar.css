@@ -1,7 +1,9 @@
 .about__avatar {
   margin: 2rem 1.5rem 1.5rem 1.5rem;
-  width: 272px;
-  height: 272px;
+  min-width: 272px;
+  min-height: 272px;
+  max-width: 100vw;
+  height: 100vw;
   border-radius: 50%;
   background-size: cover;
   background-position: center;

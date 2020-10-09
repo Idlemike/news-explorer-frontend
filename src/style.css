@@ -1,3 +1,4 @@
+@import url(./vendor/fonts.css);
 @import url(./blocks/header/header.css);
 @import url(./blocks/body/body_bg-gray.css);
 @import url(./blocks/page/page.css);
@@ -12,70 +13,6 @@
 @import url(./blocks/header/header_theme_white.css);
 @import url(./blocks/not-found/not-found.css);
 @import url(./blocks/popup/popup.css);
-
-
-@font-face {
-  font-family: Inter, Serif;
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: url("./vendor/fonts-backend/inter-regular.woff") format("woff"),
-  url("./vendor/fonts-backend/inter-regular.woff") format("woff");
-}
-
-@font-face {
-  font-family: Roboto, Serif;
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("./vendor/fonts-backend/roboto-medium.woff") format("woff"),
-  url("./vendor/fonts-backend/roboto-medium.woff") format("woff");
-}
-
-@font-face {
-  font-family: Roboto, Serif;
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: url("./vendor/fonts-backend/roboto-black.woff") format("woff"),
-  url("./vendor/fonts-backend/roboto-black.woff") format("woff");
-}
-
-@font-face {
-  font-family: Roboto Slab, Serif;
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("./vendor/fonts-backend/robotoslab-regular.woff") format("woff"),
-  url("./vendor/fonts-backend/robotoslab-regular.woff") format("woff");
-}
-
-@font-face {
-  font-family: Roboto, Serif;
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("./vendor/fonts-backend/roboto-regular.woff") format("woff"),
-  url("./vendor/fonts-backend/roboto-regular.woff") format("woff");
-}
-
-@font-face {
-  font-family: Roboto, Serif;
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("./vendor/fonts-backend/sourcesanspro-regular.woff") format("woff"),
-  url("./vendor/fonts-backend/sourcesanspro-regular.woff") format("woff");
-}
-
-@font-face {
-  font-family: Roboto Slab, Serif;
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("./vendor/fonts-backend/RobotoSlab-Bold.ttf") format("ttf"),
-  url("./vendor/fonts-backend/RobotoSlab-Bold.ttf") format("ttf");
-}
 
 html {
   box-sizing: border-box;

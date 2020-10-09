@@ -17,84 +17,66 @@ const isProd = !isDev;
 // создаем переменную для development-сборки
 
 module.exports = {
-  /*JS*/
-  context: path.resolve(__dirname, 'src'),
-  entry: { main: './index.js' },
+  entry: { main: './src/index.js', articles: './src/articles/index.js' },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[hash].js',
+    filename: '[name]/[name].[chunkhash].js',
   },
-  resolve: {
+  /*  resolve: {
     extensions: ['.js', '.json'],
     alias: {
       '@': path.resolve(__dirname, 'src'),
     },
-  },
-  devServer: {
+  },*/
+  /*  devServer: {
     disableHostCheck: true,
-  },
+  },*/
 
-  devtool: isDev ? 'source-map' : '',
+  /*  devtool: isDev ? 'source-map' : '',*/
   module: {
-    rules: [{
-      enforce: 'pre',
-      test: /\.js$/,
-      exclude: /node_modules/,
-      loader: 'eslint-loader',
-      options: {
-        extends: 'eslint:recommended',
-        // eslint options (if necessary)
-      },
-    },
-    { // тут описываются правила
-      test: /\.js$/, // регулярное выражение, которое ищет все js файлы
-      use:
+    rules: [
+      { // тут описываются правила
+        test: /\.js$/, // регулярное выражение, которое ищет все js файлы
+        use:
           {
             loader: 'babel-loader',
           },
-      // весь JS обрабатывается пакетом babel-loader
-      exclude: /node_modules/, // исключает папку node_modules
-    },
-    // пример настройки плагина image-webpack-loader
-    {
-      test: /\.(png|jpe?g|gif|ico|svg)$/i,
-      use: [
-        {
-          loader: 'file-loader',
-          options: {
-            name: '[path][name].[ext]',
-            esModule: false,
-          },
-        },
-        // 'file-loader?name=./images/[name].[ext]', // указали папку, куда складывать изображения
-        {
-          loader: 'image-webpack-loader',
-          options: {},
-        },
-      ],
-    },
-    { // в правилах укажите, что если вы собираете в режиме dev,
-      // то плагин MiniCssExtractPlugin загружать не нужно.
-      test: /\.css$/i,
-      use: [
-        (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
-        {
-          loader: 'css-loader',
-          options: {
-            importLoaders: 2,
-          },
-        },
-        'postcss-loader',
-      ],
-    },
-    {
-      test: /\.(eot|ttf|woff|woff2)$/,
-      loader: 'file-loader',
-      options: {
-        name: './fonts/[name].[ext]',
+        // весь JS обрабатывается пакетом babel-loader
+        exclude: /node_modules/, // исключает папку node_modules
       },
+      {
+        test: /\.(png|jpe?g|gif|ico|svg)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: './images/[path][name].[ext]',
+              esModule: false,
+            },
+          },
+          // 'file-loader?name=./images/[name].[ext]', // указали папку, куда складывать изображения
+          {
+            loader: 'image-webpack-loader',
+            options: {},
+          },
+        ],
+      },
+      {
+        test: /\.css$/,
+        use: [
+          (isDev ? 'style-loader' : { loader: MiniCssExtractPlugin.loader, options: { publicPath: '../' } }),
+          'css-loader',
+          'postcss-loader',
+        ],
+      },
+      {
+        test: /\.(eot|ttf|woff|woff2)$/,
+        loader: 'file-loader',
+        options: {
+          name: './fonts/[name].[ext]',
+        },
       /*               loader: 'file-loader?name=./vendor/[name].[ext]'*/
-    },
+      },
     ],
   },
   plugins: [
@@ -102,7 +84,7 @@ module.exports = {
       NODE_ENV: JSON.stringify(process.env.NODE_ENV),
     }),
     new MiniCssExtractPlugin({
-      filename: 'style.[contenthash].css',
+      filename: '[name]/[name].[contenthash].css',
     }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
@@ -118,8 +100,8 @@ module.exports = {
       minify: {
         collapseWhitespace: isProd,
       },
-      template: './index.html', // откуда брать образец для сравнения с текущим видом проекта
-      filename: 'index.html', // имя выходного файла, то есть того, что окажется в папке dist после сборки
+      template: './src/index.html', // откуда брать образец для сравнения с текущим видом проекта
+      filename: './index.html', // имя выходного файла, то есть того, что окажется в папке dist после сборки
     }),
     new HtmlWebpackPlugin({ // настроили плагин
       inject: false, // стили НЕ нужно прописывать внутри тегов
@@ -127,8 +109,8 @@ module.exports = {
       minify: {
         collapseWhitespace: isProd,
       },
-      template: './articles.html', // откуда брать образец для сравнения с текущим видом проекта
-      filename: 'articles.html', // имя выходного файла, то есть того, что окажется в папке dist после сборки
+      template: './src/articles/index.html', // откуда брать образец для сравнения с текущим видом проекта
+      filename: './articles/index.html', // имя выходного файла, то есть того, что окажется в папке dist после сборки
     }),
     new WebpackMd5Hash(),
   ],

@@ -8,7 +8,7 @@
   <link rel="shortcut icon" href="<%=require('./images/favicon.ico')%>" type="image/x-icon"/>
   <title>NewsExplorer</title>
   <link rel="stylesheet" href="vendor/normalize.css" type="text/css">
-  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css%>">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 </head>
 <body class="body_bg-gray">
@@ -53,18 +53,20 @@
       </div>
       <div class="navbar__shadow"></div>
     </nav>
+
     <div class="group group_indent">
       <div class="group__content">
         <h1 class="group__title">Что в мире творится?</h1>
         <p class="group__text">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
       </div>
-      <div class="group__search">
-        <input class="group__input" type="search" placeholder="Политика" required>
+      <form class="group__form">
+        <input class="group__input" oninvalid="setCustomValidity('Нужно ввести ключевое слово')" oninput="setCustomValidity('')" type="search" placeholder="Политика" required>
         <button type="submit" class="btn group_btn">Искать</button>
-      </div>
+      </form>
     </div>
 
     <!--Popup ENTER template-->
+    <!--<template id='signin-popup'>-->
     <div class="popup popup_type_enter">
       <div class="popup__content">
         <img src="<%=require('./images/1440/back.svg')%>" alt="Back" class="popup__close popup__close_type_reg">
@@ -72,17 +74,16 @@
         <form class="popup__form" id="formEnter" name="formEnter" novalidate>
           <div class="input">
             <div class="input-container">
-              <p class="popup__subtitle popup__subtitle_email">Email</p>
-              <input type="email" name="email" id="emailEnter" minlength="2" maxlength="30"
+              <label class='popup__subtitle popup__subtitle_email' for="enterEmail">Email</label>
+              <input type="email" name="email" id="enterEmail" minlength="2" maxlength="30"
                      class="popup__input popup__input_type_email" placeholder="Введите почту"
                      required autofocus>
-              <span id="emailEnter-error" class="error"></span>
-              <p class="popup__subtitle popup__subtitle_password">Пароль</p>
-              <input type="password" name="password" id="passwordEnter" minlength="2" maxlength="30"
+              <span id="emailEnter-error" class="error">Ошибка</span>
+              <label class="popup__subtitle popup__subtitle_password" for="enterPassword">Пароль</label>
+              <input type="password" name="password" id="enterPassword" minlength="2" maxlength="30"
                      class="popup__input popup__input_type_password" placeholder="Введите пароль"
                      required>
-              <span id="passwordEnter-error" class="error">ffffffffffffffffffffff</span>
-
+              <span id="passwordEnter-error" class="error">Ошибка</span>
             </div>
             <button type="submit" id="submitEnter" disabled
                     class="button popup__button popup__button_type_enter">
@@ -93,8 +94,10 @@
         </form>
       </div>
     </div>
+    <!--</template>-->
 
     <!--Popup REGISTRATION template-->
+    <!-- <template id='sign-up-popup'>-->
     <div class="popup popup_type_reg">
       <div class="popup__content">
         <img src="<%=require('./images/1440/back.svg')%>" alt="Back" class="popup__close popup__close_type_reg">
@@ -102,18 +105,18 @@
         <form class="popup__form" id="formReg" name="formReg" novalidate>
           <div class="input">
             <div class="input-container">
-              <p class="popup__subtitle popup__subtitle_email">Email</p>
-              <input type="email" name="email" id="emailReg" minlength="2" maxlength="30"
+              <label class="popup__subtitle popup__subtitle_email" for="signUpEmail">Email</label>
+              <input type="email" name="email" id="signUpEmail" minlength="2" maxlength="30"
                      class="popup__input popup__input_type_email" placeholder="Введите почту"
                      required>
-              <span id="emailReg-error" class="error"></span>
-              <p class="popup__subtitle popup__subtitle_password">Пароль</p>
-              <input type="password" name="passwordReg" id="passwordReg" minlength="6" maxlength="30"
+              <span id="emailReg-error" class="error">Ошибка</span>
+              <label class="popup__subtitle popup__subtitle_password" for="signUpPassword">Пароль</label>
+              <input type="password" name="passwordReg" id="signUpPassword" minlength="6" maxlength="30"
                      class="popup__input popup__input_type_password" placeholder="Введите пароль"
                      required>
-              <span id="passwordReg-error" class="error"></span>
-              <p class="popup__subtitle popup__subtitle_name">Имя</p>
-              <input type="text" name="nameReg" id="nameReg" minlength="2" maxlength="30"
+              <span id="passwordReg-error" class="error">Ошибка</span>
+              <label class="popup__subtitle popup__subtitle_name" for="signUpName">Имя</label>
+              <input type="text" name="nameReg" id="signUpName" minlength="2" maxlength="30"
                      class="popup__input popup__input_type_password" placeholder="Введите своё имя"
                      required>
               <span id="name-error" class="error error_name">Такой пользователь уже есть</span>
@@ -127,15 +130,18 @@
         </form>
       </div>
     </div>
+    <!-- </template>-->
 
     <!--Popup REGISTRATION-DONE template-->
-    <div class="popup popup_type_reg-done ">
+    <!--<template id='success-popup'>-->
+    <div class="popup popup_type_reg-done">
       <div class="popup__content popup__content_reg-done">
         <img src="<%=require('./images/1440/back.svg')%>" alt="Back" class="popup__close popup__close_type_reg">
         <h3 class="popup__title popup__title_reg-done">Пользователь успешно зарегестрирован!</h3>
-        <a href="#" class="popup__reg popup__reg_reg-done">Войти</a>
+        <a href="#" class="popup__reg popup__reg_reg-done" id='navAfterSuccess'>Войти</a>
       </div>
     </div>
+  <!--  </template>-->
 
   </section>
 
@@ -249,6 +255,6 @@
 </div>
 
 
-<script src="<%= htmlWebpackPlugin.files.js %>"></script>
+<script src="<%=htmlWebpackPlugin.files.chunks.main.entry%>"></script>
 </body>
 </html>
