@@ -9,7 +9,6 @@
   <title>NewsExplorer</title>
   <link rel="stylesheet" href="vendor/normalize.css" type="text/css">
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css%>">
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 </head>
 <body class="body_bg-gray">
 <div class="page page_active">
@@ -155,6 +154,7 @@
         <div class="card__image"
              style="background-image: url(<%=require('./images/image_08.png')%>)">
           <button class="card__flag-icon card__flag-icon_active"></button>
+          <button class="card__delete-icon"></button>
           <img src="<%=require('./images/tooltip.svg')%>" alt="tooltip" class="card__tooltip">
         </div>
         <div class="card__description">

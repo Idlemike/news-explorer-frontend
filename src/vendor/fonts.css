@@ -20,7 +20,7 @@
 @font-face {
   font-family: 'Inter';
   font-style: normal;
-  font-weight: 900;
+  font-weight: 400;
   font-display: swap;
   src: url("./fonts-backend/inter-regular.woff") format("woff"),
   url("./fonts-backend/inter-regular.woff") format("woff");
@@ -45,7 +45,7 @@
 }
 
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'sourcesanspro';
   font-style: normal;
   font-weight: 400;
   font-display: swap;

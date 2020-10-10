@@ -17,6 +17,7 @@
 html {
   box-sizing: border-box;
   height: 100%;
+  font-family: 'Roboto', serif;
 }
 
 *, *::before, *::after {box-sizing: inherit}
