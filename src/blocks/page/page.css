@@ -1,0 +1,28 @@
+.page {
+  display: none;
+  position: relative;
+  min-width: 320px;
+  min-height: 568px;
+  height: auto;
+  /* выше установили ограничение по максимальной ширине */
+  margin: 0 auto;
+  /* выше для экранов больше 1600px отцентрировали весь контент */
+  font-family: Roboto, serif;
+  font-weight: 900;
+  font-style: normal;
+  width: auto;
+  padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .page {
+    height: auto;
+    max-width: 1440px;
+  }
+}
+
+.page_active {
+  display: block;
+}
+
+

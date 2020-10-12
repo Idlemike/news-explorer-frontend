@@ -1,0 +1,26 @@
+@import url(./vendor/fonts.css);
+@import url(./blocks/header/header.css);
+@import url(./blocks/body/body_bg-gray.css);
+@import url(./blocks/page/page.css);
+@import url(./blocks/navbar/navbar.css);
+@import url(blocks/group/group.css);
+@import url(./blocks/main/main.css);
+@import url(./blocks/about/about.css);
+@import url(./blocks/footer/footer.css);
+@import url(./blocks/results/results.css);
+@import url(blocks/preloader/preloader.css);
+@import url(blocks/page_saved/page_saved.css);
+@import url(./blocks/header/header_theme_white.css);
+@import url(./blocks/not-found/not-found.css);
+@import url(./blocks/popup/popup.css);
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*, *::before, *::after {box-sizing: inherit}
+/** {
+  outline: 1px solid red;
+}*/
+

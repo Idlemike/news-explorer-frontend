@@ -1,0 +1,46 @@
+.card__flag-icon {
+  background: url(../../../images/flag-normal.svg) center no-repeat;
+  background-color: transparent;
+  border: none;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .card__flag-icon {
+    top: 8px;
+    right: 8px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .card__flag-icon {
+    top: 24px;
+    right: 24px;
+  }
+  .card:hover .card__tooltip {
+    display: block;
+  }
+}
+.card__flag-icon_active {
+  display: block;
+}
+
+.card__flag-icon:hover {
+  background: url(../../../images/flag-hover.png) center no-repeat;
+}
+
+.card__flag-icon:hover.card__tooltip {
+  display: block;
+}
+
+.card__flag-icon:focus {
+  background: url(../../../images/flag-marked.svg) center no-repeat;
+}
+
+

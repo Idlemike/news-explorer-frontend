@@ -1,0 +1,21 @@
+.navbar__title {
+  display: block;
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 3;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar__title {
+    display: block;
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}

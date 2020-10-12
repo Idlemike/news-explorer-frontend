@@ -1,0 +1,40 @@
+@import url(../card/card.css);
+@import url(../cards/cards.css);
+@import url(__title/results__title.css);
+@import url(__btn/results__btn.css);
+@import url(__title-articles/results__title-articles.css);
+@import url(__title-quantity/results__title-quantity.css);
+@import url(__keywords/results__keywords.css);
+
+.results {
+  display: none;
+  padding: 2rem 1rem 49px 1rem;
+  background: #F5F6F7;
+  height: max-content;
+}
+.results_active {
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+  .results {
+    padding: 40px 40px 57px 40px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .results {
+    padding: 80px 104px 82px 104px;
+  }
+}
+
+.results_saved {
+  background: #E5E5E5;
+  padding: .5rem 1rem 20px 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .results_saved {
+    padding: 0;
+  }
+}

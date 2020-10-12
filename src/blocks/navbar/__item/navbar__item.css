@@ -1,0 +1,13 @@
+
+.navbar__item {
+  list-style: none;
+  margin: 0;
+  padding: 0 1.05rem 0 0;
+  max-width: 100vw;
+  text-decoration-line: none;
+  color: #FFFFFF;
+}
+
+.navbar__item:last-of-type {
+  padding-right: 0;
+}

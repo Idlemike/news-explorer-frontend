@@ -1,0 +1,42 @@
+@import url(__block/header__block.css);
+@import url(__icon-item/header__icon-item.css);
+@import url(__icon-menu/header__icon-menu.css);
+@import url(__patch/header__patch.css);
+@import url(__schedule-item/header__schedule-item.css);
+@import url(__title/header__title.css);
+@import url(_indent/header_indent.css);
+@import url(btn_auth/btn_auth.css);
+@import url(header_reg.css);
+@import url(__link/header__link.css);
+@import url(__title/header__title_theme_white.css);
+@import url(__title-link/header__title-link.css);
+@import url(btn-submit/btn-submit.css);
+
+
+.header {
+  display: none;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 56px;
+  background: rgba(196, 196, 196, 0.01);
+  border-bottom: 1px solid rgba(196, 196, 196, 0.1);
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    height: 66px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .header {
+    width: 100%;
+    height: 80px;
+  }
+}
+
+.header_active {
+  display: flex;
+}
+

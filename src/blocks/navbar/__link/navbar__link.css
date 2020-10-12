@@ -1,0 +1,36 @@
+.navbar__link {
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-size: 1.125rem;
+  line-height: 2.11;
+  font-weight: 500;
+  text-decoration-line: none;
+  color: #FFFFFF;
+  opacity: 1;
+  transition: opacity .5s linear;
+  margin-left: 0;
+}
+
+.navbar__link_active {
+  text-decoration: underline;
+}
+
+.navbar__link:hover {
+  opacity: .5;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar__link {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: auto 1rem auto auto;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .navbar__link {
+    font-size: 18px;
+    line-height: 24px;
+    margin: auto 1rem auto auto;
+  }
+}

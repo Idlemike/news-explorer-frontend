@@ -1,0 +1,66 @@
+@import url(__image/card__image.css);
+@import url(__flag-icon/card__flag-icon.css);
+@import url(__title/card__title.css);
+@import url(./__text/card__text.css);
+@import url(./__source/card__source.css);
+@import url(__description/card__description.css);
+@import url(__date/card__date.css);
+@import url(__tooltip/card__tooltip.css);
+@import url(__delete-icon/card__delete-icon.css);
+@import url(__keyword-container/card__keyword-container.css);
+@import url(__keyword-title/card__keyword-title.css);
+
+.card {
+  width: 100%;
+  max-width: 400px;
+  max-height: 576px;
+  background-color: #fff;
+  border-radius: 10px;
+  min-height: 360px;
+  margin-bottom: 9px;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.card:last-of-type {
+  margin-bottom: 0;
+}
+
+/*@media screen and (min-width: 768px) {
+  .card {
+    width: calc((100% - 16px) / 3);
+    margin: 0 8px 0 0;
+    height: calc(((100% - 16px) / 3) *1.87);
+  }
+  .card:last-of-type {
+    margin-right: 0;
+  }
+}*/
+
+/*!*@media screen and (min-width: 1440px) {
+  .card {
+    width: calc((100% - 32px) / 3);
+    margin: 0 16px 0 0;
+    height: 576px;
+  }*!
+  .card:last-of-type {
+    margin-right: 0;
+  }
+}*/
+
+@media screen and (min-width: 768px) {
+  .card {
+    width: 100%;
+    margin: 0;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .card {
+    width: 100%;
+    margin: 0;
+    height: 576px;
+  }
+}

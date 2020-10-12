@@ -1,0 +1,9 @@
+.page_saved {
+  background: #E5E5E5;
+}
+
+@media screen and (min-width: 768px){
+  .page_saved {
+    width: 100vw;
+  }
+}

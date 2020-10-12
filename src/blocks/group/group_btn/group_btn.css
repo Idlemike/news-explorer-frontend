@@ -1,0 +1,71 @@
+.group_btn {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  min-width: 99%;
+  height: 56px;
+  background: #2F71E5;
+  box-shadow: 0 5px 15px rgba(14, 26, 57, 0.2);
+  border-radius: 100px;
+  /*margin: 0;*/
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.33;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+  padding: 0;
+  margin: 0 auto;
+  border: 0 none;
+}
+
+.group_btn:hover {
+  background: #347EFF;
+  cursor: pointer;
+}
+
+.group_btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px #cbd6ee;
+  background-color: #2A65CC;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .group_btn {
+    position: absolute;
+  bottom: 3rem; right: 0;
+    z-index: 9;
+    outline: none;
+    border: none;
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    min-width: 10rem;
+  }
+  .group_btn:focus {
+    box-shadow: 0 5px 15px rgba(14, 26, 57, 0.2);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .group_btn {
+    position: absolute;
+    bottom: 5rem; right: 0;
+    z-index: 9;
+    outline: none;
+    border: none;
+    display: inline-block;
+    padding: 18px 54px;
+    border-radius: 100px;
+    cursor: pointer;
+    min-width: 10.5rem;
+    height: 64px;
+  }
+  .group_btn:focus {
+    box-shadow: 0 5px 15px rgba(14, 26, 57, 0.2);
+  }
+}

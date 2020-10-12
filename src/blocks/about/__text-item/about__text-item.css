@@ -1,0 +1,12 @@
+.about__text-item {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  font-weight: 400;
+  text-decoration-line: none;
+  color: rgba(26, 27, 34, 1);
+  opacity: 1;
+  list-style: none;
+}
+.about__text-item:first-of-type {
+  padding-bottom: 24px;
+}

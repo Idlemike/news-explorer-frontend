@@ -1,0 +1,30 @@
+.card__tooltip {
+  border: none;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 4px;
+  right: 46px;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .card__tooltip {
+    top: 0;
+    right: 36px;
+    width: 182px;
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .card__tooltip {
+    top: 12px;
+    right: 46px;
+    width: auto;
+  }
+}
+
+.card__tooltip_active {
+  display: block;
+}

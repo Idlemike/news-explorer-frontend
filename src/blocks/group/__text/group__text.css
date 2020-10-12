@@ -1,0 +1,25 @@
+.group__text {
+   margin: 0;
+  padding: 0;
+  text-align: left;
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+
+@media screen and (min-width: 768px) {
+  .group__text {
+    width: 80%;
+    margin-bottom: 48px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .group__text {
+    width: 80%;
+    margin-bottom: 64px;
+  }
+}
