@@ -1,14 +1,24 @@
-// Класс попапа.
-
 export default class Popup {
-//  вставляет в попап содержимое, например, форму входа или сообщение об успешной регистрации;
-setContent = () => {};
-// очищает содержимое попапа;
-clearContent = () => {};
-// открывает попап;
-open =() => {};
-// закрывает попап.
-close = () => {};
-}
+  /** функция закрытия попапа */
+  /*  close(popup) {
+    popup.classList.remove('popup_is-opened');
+  } */
 
-// Во-первых, если часть интерфейса, которой управляет класс, подразумевает интерактивность, конструктор этого класса может принимать массив обработчиков событий, которые нужно добавить его элементам. Обработчики следует передавать конструктору в виде массива, а за их добавление должен отвечать приватный метод _setHandlers.
+  /** Обработчик клика клавы */
+  handleEscKey = (event, popup) => {
+    if (event.key === 'Escape') {
+      this.close(popup);
+    }
+  };
+
+  /** функция открытия попапа */
+  /*  open() {
+    popup.classList.add('popup_is-opened');
+  } */
+
+  setServerError = (message) => {
+    const err = document.querySelector('.server-message-error');
+    if (err) err.textContent = message;
+    err.classList.add('error-message_is-visible');
+  };
+}

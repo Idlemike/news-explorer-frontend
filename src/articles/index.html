@@ -4,153 +4,73 @@
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Mihail Andrushenko">
+  <meta name="description" content="Web-application for news' searching">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="../vendor/normalize.css" type="text/css">
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.articles.css%>">
   <link rel="shortcut icon" href="../<%=require('../images/favicon.ico')%>" type="image/x-icon"/>
   <title>NewsExplorer. Saved articles</title>
 </head>
 <body class="body_bg-gray">
 <div class="page page_saved page_active">
-  <header class="header header_indent  header_theme_white header_active">  <!--HEADER-->
+
+  <div class='overlay'></div>
+  <header class='header header_indent header_active header_theme_white'>
     <h3 class="header__title header__title_theme_white">NewsExplorer</h3>
-    <div class="header__block">
-      <a class="header__title-link header__title-link_theme_white" href="../index.html"><h4 class="header__title_main">Главная</h4>
-      </a>
-      <a class="header__title-link header__title-link_theme_white" href="index.html"><h4
-        class="header__title_main header__title_main_reg">Сохранённые
-        статьи</h4></a>
-      <button class="btn btn-auth btn-auth_reg btn_theme_white">Грета <img class="btn_union" alt="Выйти"
-                                                                           src="../<%=require('../images/Union.svg')%>">
+    <div class="header__button header__button_theme_white"></div>
+    <div class='menu menu_theme_white'>
+      <a class='menu__item menu__item_theme_white' href='../index.html'>Главная</a>
+      <a class='menu__item menu__item_theme_white menu__item_active_white' href='#'>Сохраненные статьи</a>
+      <button class="header__button-auth header__button-auth_theme_white">
+        <p class="header__button-text">Авторизоваться</p>
+        <img class='header__logout-icon' src="../<%=require('../images/icons/logout.svg')%>" alt="icon">
       </button>
     </div>
-    <a href="#" class="header__link header__link_theme_white">&#61;</a>
   </header>
+
   <section class="results results_saved results_active">
     <p class="results__title-articles">Сохранённые статьи</p>
-    <h3 class="results__title-quantity">Грета, у вас 5 сохранённых статей</h3>
-    <h5 class="results__keywords">По ключевым словам: <span class="results__keywords_bold">Природа, Тайга</span> и <span
-      class="results__keywords_bold">2 другим</span></h5>
+    <h3 class="results__title-quantity"></h3>
+    <p class="results__keywords">По ключевым словам:
+      <span class="results__keywords_bold" id="keywordsFirst"></span>
+      <span class="results__keywords_bold" id="keywordsNext"></span>
+      <span class="results__keywords_bold" id="keywordsOthers"></span>
+    </p>
     <div class="cards">
       <!-- Пример вёрстки карточки: -->
-      <!--<template id="task-template" style="display: block">;-->
-      <div class="card">
-        <div class="card__image"
-             style="background-image: url(../<%=require('../images/image_08.png')%>)">
-          <button class="card__delete-icon"></button>
-          <img src="../<%=require('../images/1440/tooltip-remove.svg')%>" class="card__tooltip" alt="Удалить">
-          <div class="card__keyword-container">
-            <p class="card__keyword-title">Природа</p>
-          </div>
-        </div>
-        <div class="card__description">
-          <h4 class="card__date">2 августа, 2019</h4>
-          <h3 class="card__title">Национальное достояние – парки</h3>
-          <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться
-            система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-          <h3 class="card__source">Лента.ру</h3>
-        </div>
-      </div>
-      <!--</template>-->
-      <!-- конец примера. -->
-      <!-- Пример вёрстки карточки: -->
-      <!--<template id="task-template" style="display: block">;-->
-      <div class="card">
-        <div class="card__image"
-             style="background-image: url(../<%=require('../images/image_07.png')%>)">
-          <button class="card__delete-icon"></button>
-          <img src="../<%=require('../images/1440/tooltip-remove.svg')%>" class="card__tooltip" alt="Удалить">
-          <div class="card__keyword-container">
-            <p class="card__keyword-title">Природа</p>
-          </div>
-        </div>
-        <div class="card__description">
-          <h4 class="card__date">2 августа, 2019</h4>
-          <h3 class="card__title">Лесные огоньки: история одной фотографии</h3>
-          <p class="card__text">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы
-            запечатлеть ускользающую красоту одного
-            из местных чудес природы.</p>
-          <h3 class="card__source">Медуза</h3>
-        </div>
-      </div>
-      <!--</template>-->
-      <!-- конец примера. -->
-      <!-- Пример вёрстки карточки: -->
-      <!--<template id="task-template" style="display: block">;-->
-      <div class="card">
-        <div class="card__image"
-             style="background-image: url(../<%=require('../images/image_06.png')%>)">
-          <button class="card__delete-icon"></button>
-          <img src="../<%=require('../images/1440/tooltip-remove.svg')%>" class="card__tooltip" alt="Удалить">
-          <div class="card__keyword-container">
-            <p class="card__keyword-title">Природа</p>
-          </div>
-        </div>
-        <div class="card__description">
-          <h4 class="card__date">2 августа, 2019</h4>
-          <h3 class="card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
-          <p class="card__text">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости
-            их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...</p>
-          <h3 class="card__source">Медиазона</h3>
-        </div>
-      </div>
-      <!--</template>-->
-      <!-- конец примера. -->
-      <!-- Пример вёрстки карточки: -->
-      <!--<template id="task-template" style="display: block">;-->
-      <div class="card">
-        <div class="card__image"
-             style="background-image: url(../<%=require('../images/image_06.png')%>)">
-          <button class="card__delete-icon"></button>
-          <img src="../<%=require('../images/1440/tooltip-remove.svg')%>" class="card__tooltip" alt="Удалить">
-          <div class="card__keyword-container">
-            <p class="card__keyword-title">Природа</p>
-          </div>
-        </div>
-          <div class="card__description">
-            <h4 class="card__date">2 августа, 2019</h4>
-            <h3 class="card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
-            <p class="card__text">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости
-              их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...</p>
-            <h3 class="card__source">Медиазона</h3>
-          </div>
-
-      </div>
-        <!--</template>-->
-        <!-- конец примера. -->
-        <!-- Пример вёрстки карточки: -->
-        <!--<template id="task-template" style="display: block">;-->
+      <template id="task-template" style="display: none">
         <div class="card">
           <div class="card__image"
-               style="background-image: url(../<%=require('../images/image_06.png')%>)">
-            <button class="card__delete-icon"></button>
-            <img src="../<%=require('../images/1440/tooltip-remove.svg')%>" class="card__tooltip" alt="Удалить">
+               style="background-image: url(../<%=require('../images/image_08.png')%>)">
+            <div id="trash" class="card__delete-icon"></div>
+            <img src="../<%=require('../images/1440/tooltip-remove.svg')%>" class="card__tooltip-remove popup_is-hidden"
+                 alt="Удалить">
             <div class="card__keyword-container">
               <p class="card__keyword-title">Природа</p>
             </div>
           </div>
-            <div class="card__description">
-              <h4 class="card__date">2 августа, 2019</h4>
-              <h3 class="card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
-              <p class="card__text">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о
-                необходимости
-                их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...</p>
-              <h3 class="card__source">Медиазона</h3>
-            </div>
+          <div class="card__description">
+            <h4 class="card__date">2 августа, 2019</h4>
+            <h3 class="card__title">Национальное достояние – парки</h3>
+            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться
+              система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+            <a href="#" class="card__source" target="_blank">Лента.ру</a>
           </div>
-          <!--</template>-->
-          <!-- конец примера. -->
+        </div>
+      </template>
 
-      </div>
+    </div>
   </section>
   <footer class="footer">
     <div class="footer__content">
       <ul class="footer__links">
         <li class="footer__link-item"><a href="../index.html" class="footer__link">Главная</a></li>
-        <li class="footer__link-item"><a href="https://praktikum.yandex.ru/" class="footer__link">Яндекс.Практикум</a></li>
+        <li class="footer__link-item"><a href="https://praktikum.yandex.ru/" class="footer__link">Яндекс.Практикум</a>
+        </li>
       </ul>
       <ul class="footer__out-links">
-        <li class="footer__out-item"><a href="https://idlemike.github.io/news-explorer-frontend/" class="footer__out-link" target="_blank"><img
+        <li class="footer__out-item"><a href="https://idlemike.github.io/news-explorer-frontend/"
+                                        class="footer__out-link" target="_blank"><img
           src="../<%=require('../images/GH.svg')%>" alt="иконка GitHub" class="footer__social-icon"/></a></li>
         <li class="footer__out-item"><a href="http://www.facebook.com" class="footer__out-link" target="_blank"><img
           src="../<%=require('../images/facebook.svg')%>" alt="иконка facebook" class="footer__social-icon"/></a>

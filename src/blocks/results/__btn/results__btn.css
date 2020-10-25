@@ -10,7 +10,7 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 1.33;
-  display: flex;
+  display: none;
   align-items: center;
   text-align: center;
   text-justify: auto;
@@ -21,8 +21,11 @@
   margin: 0 auto;
 }
 
+.results__btn_active {
+  display: flex;
+}
+
 .results__btn:hover {
-  background: #7395aa;
   cursor: pointer;
   opacity: 0.9;
 }

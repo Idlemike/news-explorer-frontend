@@ -1,0 +1,19 @@
+.header__button {
+  position: absolute;
+  top: 16px;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  align-self: center;
+  margin-right: 16px;
+  cursor: pointer;
+  z-index: 4;
+  display: block;
+  background-image: url(../../../images/menu.svg);
+}
+
+@media screen and (min-width: 768px) {
+  .header__button {
+    display: none;
+  }
+}

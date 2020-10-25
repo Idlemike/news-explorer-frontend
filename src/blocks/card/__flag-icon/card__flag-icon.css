@@ -8,7 +8,7 @@
   top: 16px;
   right: 16px;
   cursor: pointer;
-  display: none;
+  display: block;
 }
 
 @media screen and (min-width: 768px) {
@@ -23,23 +23,18 @@
     top: 24px;
     right: 24px;
   }
-  .card:hover .card__tooltip {
-    display: block;
-  }
-}
-.card__flag-icon_active {
-  display: block;
 }
 
 .card__flag-icon:hover {
   background: url(../../../images/flag-hover.png) center no-repeat;
+  transform: scale(1.03);
 }
 
-.card__flag-icon:hover.card__tooltip {
+/*.card__flag-icon:hover.card__tooltip {
   display: block;
-}
+}*/
 
-.card__flag-icon:focus {
+.card__flag-icon_marked {
   background: url(../../../images/flag-marked.svg) center no-repeat;
 }
 

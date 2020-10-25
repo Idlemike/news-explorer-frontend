@@ -4,10 +4,10 @@
   "description": "frontend news-explorer",
   "main": "./src/index.js",
   "scripts": {
-    "build": "cross-env rimraf dist && NODE_ENV=production webpack --mode production",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --mode development --open --watch",
-    "deploy": "cross-env NODE_ENV=production gh-pages -d dist",
-    "deploy_ya": "npm run build && scp -r ./dist/* idlemike@130.193.57.6:/home/idlemike/news-frontend"
+    "build": "rimraf dist && NODE_ENV=production webpack --mode production",
+    "dev": "NODE_ENV=development webpack-dev-server --mode development --open --watch",
+    "deploy": "NODE_ENV=production gh-pages -d dist",
+    "deploy_ya": "npm run build && scp -r ./dist/* idlemike@84.201.169.3:/home/idlemike/news-frontend"
   },
   "repository": {
     "type": "git",
@@ -52,7 +52,7 @@
     "style-loader": "1.2.1",
     "webpack": "4.44.2",
     "webpack-cli": "3.3.12",
-    "webpack-dev-server": "3.11.0",
+    "webpack-dev-server": "^3.11.0",
     "webpack-md5-hash": "0.0.6"
   },
   "resolutions": {

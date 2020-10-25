@@ -1,5 +1,6 @@
-# news-explorer-frontend
-# This site was built using GitHub Pages <https://idlemike.github.io/news-explorer-frontend/>
+
+# [news-explorer-frontend](https://www.3mak.tk)
+# This site was built using [GitHub Pages](https://idlemike.github.io/news-explorer-frontend/)
 ***
 ## **Version 0.0.1**
 ***

@@ -1,0 +1,22 @@
+.error-message {
+  color: #FF0000;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  text-align: left;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  transition: .3s;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  margin-bottom: 8px;
+}
+
+.input-container__invalid .error-message {
+  opacity: 1;
+}
+
+.input-container__invalid .input__text {
+  border-color: #FF3333;
+}

@@ -1,18 +1,23 @@
 @import url(./vendor/fonts.css);
+@import url(./vendor/normalize.css);
 @import url(./blocks/header/header.css);
 @import url(./blocks/body/body_bg-gray.css);
 @import url(./blocks/page/page.css);
-@import url(./blocks/navbar/navbar.css);
 @import url(blocks/group/group.css);
+@import url(./blocks/button/button.css);
 @import url(./blocks/main/main.css);
 @import url(./blocks/about/about.css);
 @import url(./blocks/footer/footer.css);
 @import url(./blocks/results/results.css);
+@import url(./blocks/menu/_theme/_white/menu_theme_white.css);
+@import url(./blocks/overlay/overlay.css);
+@import url(./blocks/overlay/_is-opened/overlay_is-opened.css);
 @import url(blocks/preloader/preloader.css);
 @import url(blocks/page_saved/page_saved.css);
-@import url(./blocks/header/header_theme_white.css);
 @import url(./blocks/not-found/not-found.css);
 @import url(./blocks/popup/popup.css);
+@import url(./blocks/menu/__item/menu__item.css);
+@import url(./blocks/menu/menu.css);
 
 html {
   box-sizing: border-box;
@@ -24,4 +29,12 @@ html {
 /** {
   outline: 1px solid red;
 }*/
+
+.popup_is-opened {
+  display: block;
+}
+
+.popup_is-hidden {
+  display: none;
+}
 

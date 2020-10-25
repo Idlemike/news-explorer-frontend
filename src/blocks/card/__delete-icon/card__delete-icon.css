@@ -8,7 +8,7 @@
   top: 16px;
   right: 16px;
   cursor: pointer;
-  display: none;
+  display: block;
 }
 
 @media screen and (min-width: 768px) {
@@ -23,11 +23,8 @@
     top: 24px;
     right: 24px;
   }
-  .card:hover .card__tooltip {
+  .card:hover .card__tooltip-remove {
     display: block;
   }
 }
 
-.card__delete-icon_show {
-  display: block;
-}

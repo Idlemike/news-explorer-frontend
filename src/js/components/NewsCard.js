@@ -1,67 +1,111 @@
-'use strict';
-import BaseComponent from '../../js/components/BaseComponent';
-import { template } from '../constants/index'
+import { mainApi } from '../constants';
+import { getUserData } from '../utils';
 
 // Класс карточки новости.
-export default class NewsCard extends BaseComponent{
+export default class NewsCard {
   card = '.card';
+
   cardImage = '.card__image';
-  cardFlagIcon = '.card__flag-icon';
+
   cardDate = '.card__date';
+
   cardTitle = '.card__title';
+
   cardText = '.card__text';
+
   cardSource = '.card__source';
-  cardDeleteIcon = '.card__delete-icon';
-  constructor(title, image, date, text, source, userInfoId,  idOwner) {
-    super();
-    this.title = title;
-    this.image = image;
-    this.date = date;
-    this.text = text;
-    this.source = source;
-    this.userInfoId = userInfoId;
-    this.idOwner = idOwner;
+
+  cardTooltip = '.card__tooltip';
+
+  constructor(data, keyword, template) {
+    this.data = data;
+    this.keyword = keyword;
+    this.template = template;
   }
-  // отвечает за отрисовку иконки карточки. У этой иконки три состояния: иконка незалогиненного пользователя, активная иконка залогиненного, неактивная иконка залогиненного.
-  renderIcon = () => {
-  
+
+  goToSource = (e) => {
+    if (e.target.classList.contains('card__flag-icon card')) return;
+    window.open(this.data.url, '_blank');
   };
+
+  showTime = (date) => {
+    const monthsArr = ['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня',
+      'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря'];
+    /*
+    const daysArr = ['Воскресенье', 'Понедельник', 'Вторник',
+    'Среда', 'Четверг', 'Пятница', 'Суббота']; */
+
+    const dateObj = new Date(Date.parse(date));
+    /*   console.log(dateObj); */
+
+    const year = dateObj.getFullYear();
+    const month = dateObj.getMonth();
+    const numDay = dateObj.getDate();
+    /*    const day = dateObj.getDay();
+    const hour = dateObj.getHours(); */
+    let minute = dateObj.getMinutes();
+    let second = dateObj.getSeconds();
+
+    if (minute < 10) minute = `0${minute}`;
+
+    if (second < 10) second = `0${second}`;
+
+    /*   const out = `${daysArr[day]}, ${numDay} ${monthsArr[month]
+    } ${year}, ${hour}:${minute}:${second}`; */
+    const out = `${numDay} ${monthsArr[month]
+    }, ${year}`;
+    return out;
+  };
+
+  toggleFlag = (e) => {
+    e.stopPropagation();
+
+    if (this.cardFlagIcon.classList.contains('card__flag-icon_marked')) {
+      mainApi.removeArticle(this.data._id)
+        .then(() => this.cardFlagIcon.classList.remove('card__flag-icon_marked'))
+        .catch((err) => err.message);
+    } else {
+      mainApi.createArticle({
+        title: this.data.title,
+        text: this.data.description,
+        date: this.data.publishedAt,
+        source: this.data.source.name,
+        link: this.data.url,
+        image: this.data.urlToImage || '',
+        keyword: this.keyword,
+      })
+        .then((res) => {
+          this.data._id = res.data.article._id;
+          this.cardFlagIcon.classList.add('card__flag-icon_marked');
+        })
+        .catch((err) => err.message);
+    }
+  };
+
+  hideTooltip = () => {
+    this.cardTooltip.classList.add('popup_is-hidden');
+  };
+
+  showTooltip = () => {
+    if (!getUserData()) this.cardTooltip.classList.remove('popup_is-hidden');
+  };
+
   // Создаёт элемент карточки и возвращает его
   create = () => {
-    this._view = this.template.cloneNode(true).children[0];
-    this._view.querySelector('.card__title').textContent = this.title;
-    this._view.querySelector('.card__text').textContent = this.text;
-    this._view.querySelector('.card__date').textContent = this.date;
-    this._view.querySelector('.card__source').textContent = this.source;
-    this._view.querySelector(this.cardImage).style.backgroundImage = `url(${this.image})`;
-    this._view.setAttribute('id', this.idName);
-    this._view.setAttribute('dataIdOwner', this.idOwner);
-    
-    if (userLogon) {
-      if (this.idOwner === this.userInfoId) {
-      this._view.querySelector(this.cardDeleteIcon).addEventListener('click', this._delClickHandler);
-      this._view.querySelector(this.cardDeleteIcon).classList.add('card__delete-icon_show');
-    }}
-    
-/*    if (this.hasLike) {
-      this._view.querySelector(this.placeCardLikeIcon).classList.add(this.placeCardLikeIconLiked)
-    }
-    this._view.querySelector(this.placeCardLikeIcon).addEventListener('click', this._like);
-    this._view.querySelector(this.placeCardImage).addEventListener('click', (event) => this.openPicturePopup(event), true);*/
-    return this._view
+    this._view = this.template.content.cloneNode(true);
+    this._view.querySelector(this.cardTitle).textContent = this.data.title;
+    this._view.querySelector(this.cardText).textContent = this.data.description;
+    this.formatedDate = this.showTime(this.data.publishedAt);
+    this._view.querySelector(this.cardDate).textContent = this.formatedDate;
+    this._view.querySelector(this.cardSource).textContent = this.data.source.name;
+    this._view.querySelector(this.cardSource).setAttribute('href', this.data.url);
+    if (this.data.urlToImage) this._view.querySelector(this.cardImage).style.backgroundImage = `url(${this.data.urlToImage})`;
+    this._view.addEventListener('click', this.goToSource);
+    this.cardFlagIcon = this._view.querySelector('#card__flag-icon');
+    this.cardTooltip = this._view.querySelector('#card__tooltip');
+    this.cardFlagIcon.addEventListener('click', (e) => this.toggleFlag(e));
+    this.cardFlagIcon.addEventListener('mouseover', this.showTooltip);
+    this.cardFlagIcon.addEventListener('mouseout', this.hideTooltip);
+    return this._view;
   };
-  
-  // Удаляет элемент карточки
-  _delClickHandler = (event) => {
-    if (window.confirm("Вы действительно хотите удалить эту карточку?")) {
-      this.cardId = event.target.closest('.card').id;
-      this._api.deleteCard(this.cardId).then(() => {
-        this._view.querySelector(this.cardDeleteIcon).removeEventListener('click', this._delClickHandler);
-       /* this._view.querySelector(this.placeCardLikeIcon).removeEventListener('click', this._like);*/
-        this._view.querySelector(this.cardImage).removeEventListener('click', (event) => this.openPicturePopup(event), true);
-        return this._view.remove();
-        
-      }).catch(err => console.log(err))
-    }
-  }
 }

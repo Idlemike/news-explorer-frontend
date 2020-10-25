@@ -1,0 +1,32 @@
+@import url(./_input/button_input.css);
+.button {
+  border-radius: 100px;
+  background-color: #2F71E5;
+  padding: 0;
+  width: 168px;
+  height: 64px;
+  box-shadow: 0 5px 15px rgba(14, 26, 57, 0.2);
+  color: #fff;
+  font-size: 18px;
+  line-height: 24px;
+  margin: auto;
+  outline: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  border: none;
+}
+
+.button:hover {
+  background-color: #347EFF;
+}
+
+.button:active {
+  background-color: #2A65CC;
+  box-shadow: 0 5px 15px rgba(14, 26, 57, 0.2);
+}
+
+@media screen and (max-width: 600px) {
+  .button {
+    height: 56px;
+  }
+}
