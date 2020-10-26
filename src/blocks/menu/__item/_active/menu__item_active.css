@@ -1,0 +1,10 @@
+.menu__item_active {
+  color: #fff;
+  border-bottom: 3px solid #fff;
+}
+
+@media screen and (max-width: 710px) {
+  .menu__item_active {
+    border-bottom: 3px solid transparent;
+  }
+}

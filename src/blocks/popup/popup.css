@@ -4,12 +4,12 @@
 @import url(./__form/popup__form.css);
 @import url(./__input/popup__input.css);
 @import url(./__button/popup__button.css);
-@import url(./_is-opened/popup_is-opened.css);
+@import url(./__navigation/popup__navigation.css);
+@import url(./__navigation/_ref/popup__navigation_ref.css);
 @import url(__button_type_enter/popup__button_type_enter.css);
-@import url(./__button/_invalid/popup__button_invalid.css);
+@import url(./__button/popup__button.css);
 @import url(./__button/_save/popup__button_save.css);
-@import url(./__button/_valid/popup__button_valid.css);
-@import url(./__button/_add/popup__button_add.css);
+@import url(./__button/_disabled/popup__button_disabled.css);
 @import url(__content_type_picture/popup__content_type_picture.css);
 @import url(_type_picture/popup_type_picture.css);
 @import url(./__input/popup__input.css);
@@ -20,8 +20,14 @@
 @import url(input-container/input-container.css);
 @import url(input/input.css);
 @import url(error/error.css);
+@import url(error/error-message.css);
+@import url(error/_form-invalid/error-message_form-invalid.css);
+@import url(error/_is-visible/error-message_is-visible.css);
+@import url(__content/_reg-done/popup__content_reg-done.css);
+@import url(__navigation/_reg-done/popup__navigation_reg-done.css);
 
 .popup {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -32,12 +38,7 @@
   border-radius: 16px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
   justify-content: end;
-  display: none;
-  z-index: 11;
-}
-
-.popup_active {
-  display: block;
+  z-index: 2;
 }
 
 @media screen and (min-width: 768px) {

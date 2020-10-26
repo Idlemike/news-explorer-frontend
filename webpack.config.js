@@ -13,7 +13,7 @@ const cssnano = require('cssnano');
 
 // подключаем плагин
 const isDev = process.env.NODE_ENV === 'development';
-const isProd = !isDev;
+/* const isProd = !isDev; */
 // создаем переменную для development-сборки
 
 module.exports = {
@@ -22,17 +22,16 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name]/[name].[chunkhash].js',
   },
-  /*  resolve: {
+  resolve: {
     extensions: ['.js', '.json'],
     alias: {
       '@': path.resolve(__dirname, 'src'),
     },
-  },*/
+  },
   /*  devServer: {
     disableHostCheck: true,
-  },*/
-
-  /*  devtool: isDev ? 'source-map' : '',*/
+  }, */
+  devtool: isDev ? 'source-map' : '',
   module: {
     rules: [
       { // тут описываются правила
@@ -75,7 +74,7 @@ module.exports = {
         options: {
           name: './fonts/[name].[ext]',
         },
-      /*               loader: 'file-loader?name=./vendor/[name].[ext]'*/
+      /*               loader: 'file-loader?name=./vendor/[name].[ext]' */
       },
     ],
   },
@@ -97,18 +96,18 @@ module.exports = {
     new HtmlWebpackPlugin({ // настроили плагин
       inject: false, // стили НЕ нужно прописывать внутри тегов
       // hash: true, // для страницы нужно считать хеш
-      minify: {
+      /*      minify: {
         collapseWhitespace: isProd,
-      },
+      }, */
       template: './src/index.html', // откуда брать образец для сравнения с текущим видом проекта
       filename: './index.html', // имя выходного файла, то есть того, что окажется в папке dist после сборки
     }),
     new HtmlWebpackPlugin({ // настроили плагин
       inject: false, // стили НЕ нужно прописывать внутри тегов
       // hash: true, // для страницы нужно считать хеш
-      minify: {
+      /*     minify: {
         collapseWhitespace: isProd,
-      },
+      }, */
       template: './src/articles/index.html', // откуда брать образец для сравнения с текущим видом проекта
       filename: './articles/index.html', // имя выходного файла, то есть того, что окажется в папке dist после сборки
     }),

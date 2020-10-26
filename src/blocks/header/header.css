@@ -1,23 +1,23 @@
-@import url(__block/header__block.css);
-@import url(__icon-item/header__icon-item.css);
-@import url(__icon-menu/header__icon-menu.css);
-@import url(__patch/header__patch.css);
-@import url(__schedule-item/header__schedule-item.css);
-@import url(__title/header__title.css);
-@import url(_indent/header_indent.css);
-@import url(btn_auth/btn_auth.css);
-@import url(header_reg.css);
-@import url(__link/header__link.css);
-@import url(__title/header__title_theme_white.css);
-@import url(__title-link/header__title-link.css);
-@import url(btn-submit/btn-submit.css);
-
+@import url(./__button/header__button.css);
+@import url(./__button/_theme_white/header__button_theme_white.css);
+@import url(./__button/_is-active/header__button_is-active.css);
+@import url(./__button/_is-hidden/header__button_is-hidden.css);
+@import url(./__button-auth/header__button-auth.css);
+@import url(./__logout-icon/header__logout-icon.css);
+@import url(./__logout-icon/_is-active/header__logout-icon_is-active.css);
+@import url(./__button-text/header__button-text.css);
+@import url(./__button-auth/_theme/_white/__button-auth_theme_white.css);
+@import url(./__title/header__title.css);
+@import url(./__title/header__title_theme_white.css);
+@import url(./_indent/header_indent.css);
+@import url(./_theme_white/header_theme_white.css);
 
 .header {
   display: none;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  z-index: 12;
   height: 56px;
   background: rgba(196, 196, 196, 0.01);
   border-bottom: 1px solid rgba(196, 196, 196, 0.1);
@@ -26,6 +26,7 @@
 @media screen and (min-width: 768px) {
   .header {
     height: 66px;
+    margin-right: 0;
   }
 }
 
@@ -40,3 +41,7 @@
   display: flex;
 }
 
+.header_theme_white {
+  background: #FFFFFF;
+  box-shadow: inset 0 -1px 0 #D1D2D6;
+}

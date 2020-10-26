@@ -1,0 +1,16 @@
+.header__button-auth_theme_white {
+/*  color: #1A1B22;*/
+  border: 1px solid #D1D2D6;
+  color: #FFFFFF;
+}
+
+.header__button-auth_theme_white:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transition: background linear 0.3s;
+}
+
+@media screen and (min-width: 768px) {
+  .header__button-auth_theme_white {
+    color: #1A1B22;
+  }
+}

@@ -20,7 +20,7 @@
 @font-face {
   font-family: 'Inter';
   font-style: normal;
-  font-weight: 900;
+  font-weight: 400;
   font-display: swap;
   src: url("./fonts-backend/inter-regular.woff") format("woff"),
   url("./fonts-backend/inter-regular.woff") format("woff");
@@ -45,7 +45,7 @@
 }
 
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'sourcesanspro';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -54,10 +54,12 @@
 }
 
 @font-face {
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("./fonts-backend/RobotoSlab-Bold.ttf") format("ttf"),
-  url("./fonts-backend/RobotoSlab-Bold.ttf") format("ttf");
+  src: url('./fonts-backend/RobotoSlab-Bold.eot');
+  src: url('./fonts-backend/RobotoSlab-Bold.eot?#iefix') format('embedded-opentype'),
+  url('./fonts-backend/RobotoSlab-Bold.woff') format('woff'),
+  url('./fonts-backend/RobotoSlab-Bold.ttf') format('truetype');
 }

@@ -23,9 +23,8 @@
     top: 24px;
     right: 24px;
   }
-  .card:hover .card__tooltip {
+  .card:hover .card__tooltip-remove {
     display: block;
   }
 }
-
 

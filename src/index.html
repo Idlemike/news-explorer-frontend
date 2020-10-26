@@ -5,54 +5,29 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="author" content="Mihail Andrushenko">
+  <meta name="description" content="Web-application for news' searching">
   <link rel="shortcut icon" href="<%=require('./images/favicon.ico')%>" type="image/x-icon"/>
   <title>NewsExplorer</title>
-  <link rel="stylesheet" href="vendor/normalize.css" type="text/css">
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css%>">
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 </head>
 <body class="body_bg-gray">
 <div class="page page_active">
   <section class="main">
-    <!--HEADER UNREGISTERED-->
-    <header class="header header_indent header_active">  <!--HEADER-->
+    <div class='overlay'></div>
+    <!--HEADER-->
+    <header class='header header_indent header_active'>
       <h3 class="header__title">NewsExplorer</h3>
-      <div class="header__block">
-        <a class="header__title-link" href="#"><h4 class="header__title_main">Главная</h4></a>
-        <button class="btn btn-auth">Регистрация</button>
-      </div>
-      <a href="#" class="header__link"><img src="<%=require('./images/menu.svg')%>" alt="Menu"></a>
-    </header>
-
-    <!--HEADER REGISTERED-->
-    <header class="header header_indent header_reg">  <!--HEADER-->
-      <h3 class="header__title">NewsExplorer</h3>
-      <div class="header__block">
-        <a class="header__title-link" href="#"><h4 class="header__title_main">Главная</h4></a>
-        <a class="header__title-link" href="#"><h4 class="header__title_main header__title_main_reg">Сохранённые
-          статьи</h4></a>
-        <form>
-          <button class="btn btn-auth btn-auth_reg">Грета<img src="<%=require('./images/Union.svg')%>" alt="Union"></button>
-        </form>
+      <div class="header__button"></div>
+      <div class='menu'>
+        <a class='menu__item menu__item_active' href='./'>Главная</a>
+        <a class='menu__item menu__item_articles' href='./articles'>Сохраненные статьи</a>
+        <button class="header__button-auth">
+          <p class="header__button-text">Авторизоваться</p>
+          <img class='header__logout-icon' src="<%=require('./images//icons/logout-white.svg')%>" alt="icon">
+        </button>
       </div>
     </header>
-    <!--При щелчке по кресту включаем navbar-->
-    <nav class="navbar">
-      <header class="header header_indent header_theme_dark header_active">
-        <h3 class="header__title">NewsExplorer</h3>
-        <a href="#" class="header__link header__link_theme_dark"><img src="<%=require('./images/back.svg')%>" alt="Back"></a>
-      </header>
-      <div class="navbar__content">
-        <div class="navbar__schedule">
-          <a class="navbar__link" href="#"><h4 class="navbar__title">
-            Главная
-          </h4></a>
-          <a class="navbar__link" href="#"><h4 class="navbar__title">Сохранённые статьи</h4></a>
-        </div>
-        <button class="btn btn-submit">Регистрация</button>
-      </div>
-      <div class="navbar__shadow"></div>
-    </nav>
 
     <div class="group group_indent">
       <div class="group__content">
@@ -60,155 +35,43 @@
         <p class="group__text">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
       </div>
       <form class="group__form">
-        <input class="group__input" oninvalid="setCustomValidity('Нужно ввести ключевое слово')" oninput="setCustomValidity('')" type="search" placeholder="Политика" required>
+        <input class="group__input" oninvalid="setCustomValidity('Нужно ввести ключевое слово')"
+               oninput="setCustomValidity('')" type="search" placeholder="Политика" required>
         <button type="submit" class="btn group_btn">Искать</button>
       </form>
     </div>
 
-    <!--Popup ENTER template-->
-    <!--<template id='signin-popup'>-->
-    <div class="popup popup_type_enter">
-      <div class="popup__content">
-        <img src="<%=require('./images/1440/back.svg')%>" alt="Back" class="popup__close popup__close_type_reg">
-        <h3 class="popup__title">Вход</h3>
-        <form class="popup__form" id="formEnter" name="formEnter" novalidate>
-          <div class="input">
-            <div class="input-container">
-              <label class='popup__subtitle popup__subtitle_email' for="enterEmail">Email</label>
-              <input type="email" name="email" id="enterEmail" minlength="2" maxlength="30"
-                     class="popup__input popup__input_type_email" placeholder="Введите почту"
-                     required autofocus>
-              <span id="emailEnter-error" class="error">Ошибка</span>
-              <label class="popup__subtitle popup__subtitle_password" for="enterPassword">Пароль</label>
-              <input type="password" name="password" id="enterPassword" minlength="2" maxlength="30"
-                     class="popup__input popup__input_type_password" placeholder="Введите пароль"
-                     required>
-              <span id="passwordEnter-error" class="error">Ошибка</span>
-            </div>
-            <button type="submit" id="submitEnter" disabled
-                    class="button popup__button popup__button_type_enter">
-              Войти
-            </button>
-            <p class="popup__or">или <a href="#" class="popup__reg">Зарегистрироваться</a></p>
-          </div>
-        </form>
-      </div>
-    </div>
-    <!--</template>-->
-
-    <!--Popup REGISTRATION template-->
-    <!-- <template id='sign-up-popup'>-->
-    <div class="popup popup_type_reg">
-      <div class="popup__content">
-        <img src="<%=require('./images/1440/back.svg')%>" alt="Back" class="popup__close popup__close_type_reg">
-        <h3 class="popup__title">Регистрация</h3>
-        <form class="popup__form" id="formReg" name="formReg" novalidate>
-          <div class="input">
-            <div class="input-container">
-              <label class="popup__subtitle popup__subtitle_email" for="signUpEmail">Email</label>
-              <input type="email" name="email" id="signUpEmail" minlength="2" maxlength="30"
-                     class="popup__input popup__input_type_email" placeholder="Введите почту"
-                     required>
-              <span id="emailReg-error" class="error">Ошибка</span>
-              <label class="popup__subtitle popup__subtitle_password" for="signUpPassword">Пароль</label>
-              <input type="password" name="passwordReg" id="signUpPassword" minlength="6" maxlength="30"
-                     class="popup__input popup__input_type_password" placeholder="Введите пароль"
-                     required>
-              <span id="passwordReg-error" class="error">Ошибка</span>
-              <label class="popup__subtitle popup__subtitle_name" for="signUpName">Имя</label>
-              <input type="text" name="nameReg" id="signUpName" minlength="2" maxlength="30"
-                     class="popup__input popup__input_type_password" placeholder="Введите своё имя"
-                     required>
-              <span id="name-error" class="error error_name">Такой пользователь уже есть</span>
-            </div>
-            <button type="submit" id="submitReg" disabled
-                    class="button popup__button popup__button_type_enter popup__button_type_reg">
-              Зарегистрироваться
-            </button>
-            <p class="popup__or">или <a href="#" class="popup__reg">Войти</a></p>
-          </div>
-        </form>
-      </div>
-    </div>
-    <!-- </template>-->
-
-    <!--Popup REGISTRATION-DONE template-->
-    <!--<template id='success-popup'>-->
-    <div class="popup popup_type_reg-done">
-      <div class="popup__content popup__content_reg-done">
-        <img src="<%=require('./images/1440/back.svg')%>" alt="Back" class="popup__close popup__close_type_reg">
-        <h3 class="popup__title popup__title_reg-done">Пользователь успешно зарегестрирован!</h3>
-        <a href="#" class="popup__reg popup__reg_reg-done" id='navAfterSuccess'>Войти</a>
-      </div>
-    </div>
-  <!--  </template>-->
 
   </section>
 
   <!--SEARCH RESULTS-->
-  <section class="results results_active">
+  <section class="results">
     <h2 class="results__title">Результаты поиска</h2>
     <div class="cards">
+
       <!-- Пример вёрстки карточки: -->
-      <!--<template id="task-template" style="display: block">;-->
-      <div class="card">
-        <div class="card__image"
-             style="background-image: url(<%=require('./images/image_08.png')%>)">
-          <button class="card__flag-icon card__flag-icon_active"></button>
-          <img src="<%=require('./images/tooltip.svg')%>" alt="tooltip" class="card__tooltip">
+      <template id="task-template" style="display: none">
+        <div class="card">
+          <div class="card__image"
+               style="background-image: url(<%=require('./images/image_08.png')%>)">
+            <div class="card__flag-icon" id="card__flag-icon"></div>
+            <img src="<%=require('./images/tooltip.svg')%>" alt="tooltip" class="card__tooltip popup_is-hidden" id="card__tooltip">
+          </div>
+          <div class="card__description">
+            <h4 class="card__date">2 августа, 2019</h4>
+            <h3 class="card__title">Национальное достояние – парки</h3>
+            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться
+              система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+            <a href="#" class="card__source" target="_blank">Лента.ру</a>
+          </div>
         </div>
-        <div class="card__description">
-          <h4 class="card__date">2 августа, 2019</h4>
-          <h3 class="card__title">Национальное достояние – парки</h3>
-          <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться
-            система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-          <h3 class="card__source">Лента.ру</h3>
-        </div>
-      </div>
-      <!--</template>-->
-      <!-- конец примера. -->
-      <!-- Пример вёрстки карточки: -->
-      <!--<template id="task-template" style="display: block">;-->
-      <div class="card">
-        <div class="card__image"
-             style="background-image: url(<%=require('./images/image_07.png')%>)">
-          <button class="card__flag-icon card__flag-icon_active"></button>
-          <img src="<%=require('./images/tooltip.svg')%>" alt="tooltip" class="card__tooltip">
-        </div>
-        <div class="card__description">
-          <h4 class="card__date">2 августа, 2019</h4>
-          <h3 class="card__title">Лесные огоньки: история одной фотографии</h3>
-          <p class="card__text">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы
-            запечатлеть ускользающую красоту одного
-            из местных чудес природы.</p>
-          <h3 class="card__source">Медуза</h3>
-        </div>
-      </div>
-      <!--</template>-->
-      <!-- конец примера. -->
-      <!-- Пример вёрстки карточки: -->
-      <!--<template id="task-template" style="display: block">;-->
-      <div class="card">
-        <div class="card__image"
-             style="background-image: url(<%=require('./images/image_06.png')%>)">
-          <button class="card__flag-icon card__flag-icon_active"></button>
-          <img src="<%=require('./images/tooltip.svg')%>" alt="tooltip" class="card__tooltip">
-        </div>
-        <div class="card__description">
-          <h4 class="card__date">2 августа, 2019</h4>
-          <h3 class="card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
-          <p class="card__text">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости
-            их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...</p>
-          <h3 class="card__source">Медиазона</h3>
-        </div>
-      </div>
-      <!--</template>-->
-      <!-- конец примера. -->
+      </template>
+
     </div>
     <button class="results__btn">Показать еще</button>
   </section>
 
-  <section class="not-found not-found_active">
+  <section class="not-found">
     <img src="<%=require('./images/not-found_v1.svg')%>" alt="картинка - не найдено" class="not-found__magnifier">
     <h3 class="not-found__title">Ничего не найдено</h3>
     <p class="not-found__text">К сожалению по вашему запросу
@@ -240,10 +103,12 @@
     <div class="footer__content">
       <ul class="footer__links">
         <li class="footer__link-item"><a href="index.html" class="footer__link">Главная</a></li>
-        <li class="footer__link-item"><a href="https://praktikum.yandex.ru/" class="footer__link">Яндекс.Практикум</a></li>
+        <li class="footer__link-item"><a href="https://praktikum.yandex.ru/" class="footer__link" target="_blank">Яндекс.Практикум</a>
+        </li>
       </ul>
       <ul class="footer__out-links">
-        <li class="footer__out-item"><a href="https://idlemike.github.io/news-explorer-frontend/" class="footer__out-link" target="_blank"><img
+        <li class="footer__out-item"><a href="https://idlemike.github.io/news-explorer-frontend/"
+                                        class="footer__out-link" target="_blank"><img
           src="<%=require('./images/GH.svg')%>" alt="иконка GitHub" class="footer__social-icon"/></a></li>
         <li class="footer__out-item"><a href="http://www.facebook.com" class="footer__out-link" target="_blank"><img
           src="<%=require('./images/facebook.svg')%>" alt="иконка facebook" class="footer__social-icon"/></a>
@@ -252,6 +117,85 @@
     </div>
     <h5 class="footer__copyright">&#169; 2020 Supersite, Powered by News API</h5>
   </footer>
+
+  <!--Popup LOGIN template-->
+  <div id='signin-popup' class="popup">
+    <div class="popup__content">
+      <img src="<%=require('./images/icons/close-mid.svg')%>" alt="close" class="popup__close popup__close-login">
+      <h3 class="popup__title">Вход</h3>
+      <form class="popup__form" id="formEnter" name="formLogin" novalidate>
+        <div class="input-container">
+          <label class='popup__subtitle popup__subtitle_email' for="enterEmail">Email</label>
+          <input type="email" name="email" id="enterEmail"
+                 class="popup__input popup__input_type_email" placeholder="Введите почту"
+                 required>
+          <span id="enterEmail-error" class="error-message"></span>
+        </div>
+        <div class="input-container">
+          <label class="popup__subtitle popup__subtitle_password" for="enterPassword">Пароль</label>
+          <input type="password" minlength="7" name="password" id="enterPassword"
+                 class="popup__input popup__input_type_password" placeholder="Введите пароль"
+                 required>
+          <span id="enterPassword-error" class="error-message"></span>
+        </div>
+        <p id="errorsignIpForm" class="error-message server-message-error">Такой пользователь уже существует</p>
+        <button type="submit" id="submitEnter" disabled
+                class="button popup__button popup__button_type_login">
+          Войти
+        </button>
+      </form>
+      <p class='popup__navigation'>или<span class='popup__navigation popup__navigation_ref' id='navToSignUp'>Зарегистрироваться</span>
+      </p>
+    </div>
+  </div>
+
+  <!--Popup REGISTRATION template-->
+  <div id='sign-up-popup' class="popup">
+    <div class="popup__content">
+      <img src="<%=require('./images/icons/close-mid.svg')%>" alt="close" class="popup__close popup__close-reg">
+      <h3 class="popup__title">Регистрация</h3>
+      <form class="popup__form" id="formReg" name="formReg" novalidate>
+        <div class="input-container">
+          <label class="popup__subtitle popup__subtitle_email" for="signUpEmail">Email</label>
+          <input type="email" name="email" id="signUpEmail"
+                 class="popup__input popup__input_type_email" placeholder="Введите почту"
+                 required>
+          <span id="signUpEmail-error" class="error-message"></span>
+        </div>
+        <div class="input-container">
+          <label class="popup__subtitle popup__subtitle_password" for="signUpPassword">Пароль</label>
+          <input type="password" name="password" id="signUpPassword" minlength="8"
+                 class="popup__input popup__input_type_password" placeholder="Введите пароль"
+                 required>
+          <span id="signUpPassword-error" class="error-message"></span>
+        </div>
+        <div class="input-container">
+          <label class="popup__subtitle popup__subtitle_name" for="signUpName">Имя</label>
+          <input type="text" name="name" id="signUpName"
+                 class="popup__input popup__input_type_password" placeholder="Введите своё имя"
+                 required>
+          <span id="signUpName-error" class="error-message"></span>
+        </div>
+        <p id="errorsignUpForm" class="error-message server-message-error">Такой пользователь уже существует</p>
+        <button type="submit" id="submitReg" disabled
+                class="button popup__button popup__button_type_login popup__button_type_reg">
+          Зарегистрироваться
+        </button>
+      </form>
+      <p class='popup__navigation'>или<span class='popup__navigation popup__navigation_ref'
+                                            id='navToSignIn'>Войти</span>
+      </p>
+    </div>
+  </div>
+
+  <!--Popup REGISTRATION-DONE template-->
+  <div id='reg-done-popup' class="popup popup_reg-done">
+    <div class="popup__content popup__content_reg-done">
+      <img src="<%=require('./images/icons/close.svg')%>" alt="close" class="popup__close popup__close-reg-done">
+      <h3 class="popup__title popup__title_reg-done">Пользователь успешно зарегестрирован!</h3>
+      <p class='popup__navigation popup__navigation_reg-done popup__navigation_ref' id='navAfterSuccess'>Войти</p>
+    </div>
+  </div>
 </div>
 
 

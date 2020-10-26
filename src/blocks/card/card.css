@@ -9,6 +9,7 @@
 @import url(__delete-icon/card__delete-icon.css);
 @import url(__keyword-container/card__keyword-container.css);
 @import url(__keyword-title/card__keyword-title.css);
+@import url(__tooltip-remove/card__tooltip-remove.css);
 
 .card {
   width: 100%;

@@ -1,4 +1,5 @@
 .about__avatar {
+  display: block;
   margin: 2rem 1.5rem 1.5rem 1.5rem;
   min-width: 272px;
   min-height: 272px;
@@ -8,6 +9,14 @@
   background-size: cover;
   background-position: center;
   background-image: url(../../../images/image-03.png);
+}
+
+@media screen and (min-width: 425px) {
+  .about__avatar {
+    width: 70vw;
+    height: 70vw;
+    margin: 2rem auto 1.5rem auto ;
+  }
 }
 
 @media screen and (min-width: 768px) {

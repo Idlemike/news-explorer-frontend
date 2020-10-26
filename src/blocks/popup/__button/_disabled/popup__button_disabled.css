@@ -1,0 +1,13 @@
+.popup__button_disabled {
+  background: #E6E8EB;
+  color: #B6BCBF;
+  box-shadow: none;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  transition: .3s;
+}
+
+.popup__button_disabled:hover {
+  background: #E6E8EB;
+}

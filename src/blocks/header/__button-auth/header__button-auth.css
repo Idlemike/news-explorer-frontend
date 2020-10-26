@@ -1,0 +1,34 @@
+.header__button-auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  margin: auto;
+  background: none;
+  color: #fff;
+  font-size: 18px;
+  line-height: 24px;
+  border-radius: 100px;
+  padding: 0;
+  width: 152px;
+  height: 40px;
+  box-shadow: none;
+  border: 1px solid #fff;
+  z-index: 1;
+}
+
+.header__button-auth:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transition: background linear 0.2s;
+}
+
+@media screen and (min-width: 768px) {
+  .header__button-auth {
+
+
+    width: 176px;
+    height: 48px;
+  }
+}
+
